@@ -8,11 +8,11 @@
 		<version>2.5.1</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.bank</groupId>
-	<artifactId>atm</artifactId>
+	<groupId>ru.korobko</groupId>
+	<artifactId>pricelist</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>atm</name>
-	<description>atm project</description>
+	<name>pricelist</name>
+	<description>pricelist project</description>
 	<properties>
 		<maven.compiler.source>11</maven.compiler.source>
 		<maven.compiler.target>11</maven.compiler.target>
