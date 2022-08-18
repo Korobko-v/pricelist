@@ -19,9 +19,6 @@ public class Price {
     private Long id;
 
     @Column
-    private String productCode;
-
-    @Column
     private Integer priceNumber;
 
     @Column
@@ -37,6 +34,6 @@ public class Price {
     private Long value;
 
     @ManyToOne
-    @JoinColumn(name="product_code", nullable=false)
+    @JoinColumn(name="code", nullable=false)
     private Product product;
 }
