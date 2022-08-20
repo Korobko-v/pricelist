@@ -2,6 +2,7 @@ package ru.korobko.pricelist.service;
 
 import ru.korobko.pricelist.domain.dto.request.PriceRequestDto;
 import ru.korobko.pricelist.domain.dto.request.ProductRequestDto;
+import ru.korobko.pricelist.domain.dto.response.PriceResponseDto;
 import ru.korobko.pricelist.domain.dto.response.ProductResponseDto;
 import ru.korobko.pricelist.domain.entity.Product;
 
@@ -17,4 +18,5 @@ public interface IProductService {
 
     Product getById(Long id);
 
+    List<PriceResponseDto> getAllPricesForProduct(Long productId);
 }

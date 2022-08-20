@@ -29,6 +29,10 @@ public class Product {
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<Price> prices;
 
+    /**
+     * Check if the product has a current price (began and not expired)
+     * @return {@code true} if the product ahs a current price, {@code false} otherwise
+     */
     public boolean hasCurrentPrice() {
         for (Price price : this.getPrices()) {
             Date now = new Date();
@@ -39,6 +43,10 @@ public class Product {
         return false;
     }
 
+    /**
+     * Get current price
+     * @return price
+     */
     public Price getCurrentPrice() {
             return this.prices
                     .stream()
@@ -47,6 +55,11 @@ public class Product {
                     .min(Price::comparePricePriorities).orElseThrow();
     }
 
+    /**
+     * Checks if the product has price with given value and updates the price or creates a new one
+     * @param price new price
+     * @return created or updated price
+     */
     public Price checkAndCreateOrUpdatePrice(Price price) {
         if (this.getPrices() == null || this.getPrices().isEmpty()) {
             List<Price> prices = new ArrayList<>();

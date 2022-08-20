@@ -4,17 +4,15 @@ import org.springframework.stereotype.Component;
 import ru.korobko.pricelist.domain.dto.request.ProductRequestDto;
 import ru.korobko.pricelist.domain.dto.response.ProductResponseDto;
 import ru.korobko.pricelist.domain.entity.Product;
-import ru.korobko.pricelist.util.exception.NoCurrentPriceException;
 
 @Component
 public class ProductDtoMapper {
 
     /**
-     * Get DTO from model.
+     * Get request DTO from the model.
      *
      * @param product model
-     * @return product DTO
-     * @throws NoCurrentPriceException
+     * @return product request DTO
      */
     public ProductRequestDto getProductRequestDtoFromProduct(Product product) {
         ProductRequestDto productDto = new ProductRequestDto();
@@ -23,6 +21,11 @@ public class ProductDtoMapper {
         return productDto;
     }
 
+    /**
+     * Get response DTO from the model
+     * @param product model
+     * @return product response DTO
+     */
     public ProductResponseDto getProductResponseDtoFromProduct(Product product) {
         ProductResponseDto productResponseDto = new ProductResponseDto();
         productResponseDto.setId(product.getId());
@@ -34,6 +37,11 @@ public class ProductDtoMapper {
         return productResponseDto;
     }
 
+    /**
+     * Get product from product request DTO
+     * @param productRequestDto product request DTO
+     * @return product model
+     */
     public Product getProductFromProductRequestDto(ProductRequestDto productRequestDto) {
         Product product = new Product();
         product.setCode(productRequestDto.getCode());

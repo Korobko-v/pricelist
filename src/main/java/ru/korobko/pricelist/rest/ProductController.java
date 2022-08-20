@@ -8,7 +8,6 @@ import ru.korobko.pricelist.domain.dto.request.ProductRequestDto;
 import ru.korobko.pricelist.domain.dto.response.PriceResponseDto;
 import ru.korobko.pricelist.domain.dto.response.ProductResponseDto;
 import ru.korobko.pricelist.service.IProductService;
-import ru.korobko.pricelist.util.mapper.ProductDtoMapper;
 
 import java.util.List;
 
@@ -51,4 +50,8 @@ public class ProductController {
         return this.productService.addPrice(id, priceRequestDto);
     }
 
+    @GetMapping("{id}/prices")
+    public List<PriceResponseDto> getAllPricesForProduct(@PathVariable(name = "id") Long id) {
+        return this.productService.getAllPricesForProduct(id);
+    }
 }

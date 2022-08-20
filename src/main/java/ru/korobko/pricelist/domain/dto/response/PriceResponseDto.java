@@ -12,10 +12,6 @@ import java.util.Date;
 @AllArgsConstructor
 public class PriceResponseDto {
 
-    private Long id;
-
-    private Long productId;
-
     private Integer priceNumber;
 
     private Integer departmentNumber;

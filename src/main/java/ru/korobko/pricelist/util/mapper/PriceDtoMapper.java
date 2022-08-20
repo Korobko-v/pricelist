@@ -16,7 +16,7 @@ public class PriceDtoMapper {
     /**
      * Get request DTO from model.
      * @param price model
-     * @return price DTO
+     * @return price request DTO
      */
     public PriceResponseDto getPriceRequestDtoFromPrice(Price price) {
         PriceResponseDto priceRequestDto = new PriceResponseDto();
@@ -29,6 +29,11 @@ public class PriceDtoMapper {
         return priceRequestDto;
     }
 
+    /**
+     * Get response DTO from model.
+     * @param price model
+     * @return price response DTO
+     */
     public PriceResponseDto getPriceResponseDtoFromPrice(Price price) {
         PriceResponseDto priceResponseDto = new ru.korobko.pricelist.domain.dto.response.PriceResponseDto();
         priceResponseDto.setPriceNumber(price.getPriceNumber());
@@ -40,6 +45,11 @@ public class PriceDtoMapper {
         return priceResponseDto;
     }
 
+    /**
+     * Get price model from request DTO
+     * @param priceRequestDto request DTO
+     * @return price model
+     */
     public Price getPriceFromPriceRequestDto(PriceRequestDto priceRequestDto) {
         Price price = new Price();
         price.setPriceNumber(priceRequestDto.getPriceNumber());
