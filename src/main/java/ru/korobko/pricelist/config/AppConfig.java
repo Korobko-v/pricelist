@@ -6,6 +6,6 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
 @EnableTransactionManagement
-@EnableJpaRepositories(basePackages = "com.bank.atm.repositories")
+@EnableJpaRepositories(basePackages = "ru.korobko.pricelist.repository")
 public class AppConfig {
 }

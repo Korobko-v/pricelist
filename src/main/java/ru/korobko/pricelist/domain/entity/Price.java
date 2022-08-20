@@ -1,5 +1,6 @@
 package ru.korobko.pricelist.domain.entity;
 
+import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -9,8 +10,7 @@ import java.util.Date;
 
 @Entity
 @Table(name = "prices")
-@Getter
-@Setter
+@Data
 @NoArgsConstructor
 public class Price {
 
@@ -25,15 +25,20 @@ public class Price {
     private Integer departmentNumber;
 
     @Column
-    private Date begin;
+    private Date beginDate;
 
     @Column
-    private Date end;
+    private Date endDate;
 
     @Column
     private Long value;
 
-    @ManyToOne
-    @JoinColumn(name="code", nullable=false)
+    @ManyToOne(cascade = CascadeType.ALL)
     private Product product;
+
+    public static int comparePricePriorities (Price p1, Price p2){
+        if(p1.getPriceNumber() > p2.getPriceNumber())
+            return 1;
+        return -1;
+    }
 }

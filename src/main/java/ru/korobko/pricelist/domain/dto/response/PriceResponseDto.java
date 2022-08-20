@@ -1,4 +1,5 @@
-package ru.korobko.pricelist.domain.dto;
+package ru.korobko.pricelist.domain.dto.response;
+
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -6,12 +7,14 @@ import lombok.NoArgsConstructor;
 
 import java.util.Date;
 
-@AllArgsConstructor
-@NoArgsConstructor
 @Data
-public class PriceDto {
+@NoArgsConstructor
+@AllArgsConstructor
+public class PriceResponseDto {
 
-    private String productCode;
+    private Long id;
+
+    private Long productId;
 
     private Integer priceNumber;
 
